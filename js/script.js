@@ -35,7 +35,14 @@ function showList(array) {
     container.appendChild(li);
   });
 }
+document.addEventListener("DOMContentLoaded", (e) => {
+  const strings = strangeArray.filter(element => typeof element === 'string');
 
+  const nuevoArray = strings.sort((a, b) => {
+    return a.toUpperCase().localeCompare(b.toUpperCase());
+  });
+
+  showList(nuevoArray);
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
